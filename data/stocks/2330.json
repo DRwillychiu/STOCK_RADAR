@@ -5,20 +5,20 @@
   "market": "上市",
   "industry": "半導體",
   "subIndustry": "晶圓代工",
-  "lastUpdated": "2026-04-25T07:00:00+08:00",
-  "dataQuality": "mock",
-  "_dataQualityNote": "此為前端開發用 mock 資料。Phase 2 SKILL 完成後會被覆蓋為真實資料。",
+  "lastUpdated": "2026-04-24T13:30:00+08:00",
+  "dataQuality": "partial",
+  "_dataQualityNote": "price 區塊為 FinMind 真實資料 (2026-04-24 收盤)。其他軟洞察（executiveSummary, transformation 等）為人工撰寫範例，需以 stock-research SKILL 更新為實際研究結果。",
 
   "price": {
-    "current": 1180.00,
-    "change": 14.00,
-    "changePercent": 1.20,
-    "previousClose": 1166.00,
-    "open": 1170.00,
-    "high": 1185.00,
-    "low": 1168.00,
-    "volume": 28543000,
-    "marketCap": 30598000000000
+    "current": 2185.00,
+    "change": 105.00,
+    "changePercent": 5.05,
+    "previousClose": 2080.00,
+    "open": 2110.00,
+    "high": 2190.00,
+    "low": 2105.00,
+    "volume": 52391785,
+    "marketCap": 56660000000000
   },
 
   "oneLineDef": "全球最大專業積體電路製造服務（晶圓代工）公司，市占率超過 60%，掌握 3 奈米以下先進製程。",

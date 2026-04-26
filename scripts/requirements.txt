@@ -1,0 +1,10 @@
+# Stock Radar — Main repo Python dependencies
+#
+# 用於 GitHub Actions 排程執行。刻意保持極簡，僅用標準庫。
+# 與 skill/stock-research/scripts/requirements.txt 相同設計理念。
+#
+# 預期 Python 版本：3.10+
+#
+# 目前所有 fetcher 都使用標準庫（urllib、json、datetime），
+# 因此本檔案實際上不需要安裝任何套件。
+# 保留此檔案是為了讓 GitHub Actions workflow 的 `pip install -r` 步驟有東西可吃。

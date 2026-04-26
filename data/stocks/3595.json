@@ -5,20 +5,20 @@
   "market": "興櫃",
   "industry": "光電業",
   "subIndustry": "光學機能膜 / 半導體封裝材料（轉型中）",
-  "lastUpdated": "2026-04-25T07:00:00+08:00",
-  "dataQuality": "partial_real",
-  "_dataQualityNote": "股價、本益比、市值為查詢時取得之近似真實數據。其餘描述為基於公開資訊整理，Phase 2 SKILL 完成後會以多源驗證資料覆蓋。",
+  "lastUpdated": "2026-04-24T13:30:00+08:00",
+  "dataQuality": "partial",
+  "_dataQualityNote": "price 為 FinMind 真實資料 (2026-04-24 收盤)。其他軟洞察為基於公開資訊整理的範例，需以 stock-research SKILL 更新。",
 
   "price": {
-    "current": 2770.00,
-    "change": -15.63,
-    "changePercent": -0.56,
-    "previousClose": 2785.63,
-    "open": 2810.00,
-    "high": 2910.00,
-    "low": 2510.00,
-    "volume": 1308523,
-    "marketCap": 93940000000
+    "current": 2715.00,
+    "change": 4.39,
+    "changePercent": 0.16,
+    "previousClose": 2710.61,
+    "open": 2692.77,
+    "high": 2815.00,
+    "low": 2620.00,
+    "volume": 668902,
+    "marketCap": 92070000000
   },
 
   "oneLineDef": "原為光學機能膜廠，2025 年起轉型切入半導體封裝材料與 AI 伺服器供應鏈，興櫃市場異常標的。",

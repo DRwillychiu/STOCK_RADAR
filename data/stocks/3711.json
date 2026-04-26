@@ -5,20 +5,20 @@
   "market": "上市",
   "industry": "半導體",
   "subIndustry": "封裝測試",
-  "lastUpdated": "2026-04-25T07:00:00+08:00",
-  "dataQuality": "mock",
-  "_dataQualityNote": "此為前端開發用 mock 資料。Phase 2 SKILL 完成後會被覆蓋為真實資料。",
+  "lastUpdated": "2026-04-24T13:30:00+08:00",
+  "dataQuality": "partial",
+  "_dataQualityNote": "price 區塊為 FinMind 真實資料 (2026-04-24 收盤)。其他軟洞察為人工撰寫範例，需以 stock-research SKILL 更新。",
 
   "price": {
-    "current": 165.50,
-    "change": -0.83,
-    "changePercent": -0.50,
-    "previousClose": 166.33,
-    "open": 166.00,
-    "high": 167.00,
-    "low": 165.00,
-    "volume": 18430000,
-    "marketCap": 720000000000
+    "current": 496.00,
+    "change": 31.50,
+    "changePercent": 6.78,
+    "previousClose": 464.50,
+    "open": 467.50,
+    "high": 500.00,
+    "low": 467.50,
+    "volume": 27381879,
+    "marketCap": 2160000000000
   },
 
   "oneLineDef": "全球最大專業半導體封裝測試（OSAT）廠，市占率超過 30%，旗下整合日月光半導體與矽品兩大封測廠。",

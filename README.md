@@ -11,14 +11,14 @@
 ```
 [▰▰▰▰▰▰▰▰▰▰] Phase 1: MVP                100%   ✅ 已完成
 [▰▰▰▰▰▰▰▰▰▰] Phase 2: 研究 SKILL          100%   ✅ 已完成
-[▱▱▱▱▱▱▱▱▱▱] Phase 3: 自動化資料層           0%
+[▰▰▰▰▰▰▰▰▰▰] Phase 3: 自動化資料層        100%   ✅ 已完成（待你部署驗收）
 [▱▱▱▱▱▱▱▱▱▱] Phase 4: 即時查詢功能           0%
 [▱▱▱▱▱▱▱▱▱▱] Phase 5: AI 整合與精煉          0%
 [▱▱▱▱▱▱▱▱▱▱] Phase 6: 進階功能（選做）       0%
 ```
 
 **最後更新**：2026-04-26
-**當前重點**：SKILL 完成，準備進入 Phase 3 建立 GitHub Actions 自動化排程
+**當前重點**：Phase 3 程式碼完成，待你按 [`PHASE3_DEPLOYMENT.md`](./PHASE3_DEPLOYMENT.md) 部署 + 5 天觀察期
 **卡關**：無
 
 ### Phase 2 產出
@@ -27,6 +27,12 @@
 - `skill/stock-research/scripts/` — FinMind / Yahoo / MOPS / 交叉驗證 (純標準庫)
 - `skill/stock-research/templates/` — JSON Schema、筆記模板
 - `skill/stock-research/reference/industry_taxonomy.json` — 產業分類對照
+
+### Phase 3 產出
+
+- `scripts/update_watchlist.py` — 安全合併器（保留 Claude 寫的軟洞察，只更新硬資料）
+- `.github/workflows/daily_update.yml` — 每日 07:00 排程 + 手動觸發 + dry-run 選項
+- `PHASE3_DEPLOYMENT.md` — Step-by-step 部署指南
 
 ---
 

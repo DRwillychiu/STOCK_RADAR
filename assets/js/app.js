@@ -163,6 +163,43 @@ async function initHome() {
   // 更新 hero 統計
   document.getElementById('stat-watchlist-count').textContent = watchlist.stocks.length;
   document.getElementById('stat-last-updated').textContent = fmt.datetime(watchlist.lastUpdated);
+
+  // 即時更新所有卡片的價格（async，不阻塞）
+  enrichWatchlistPrices(watchlist.stocks);
+}
+
+async function enrichWatchlistPrices(stocks) {
+  if (!window.StockRadarFetch) return;
+
+  for (const s of stocks) {
+    try {
+      const fresh = await window.StockRadarFetch.fetchLatestPrice(s.id);
+      if (!fresh.ok) continue;
+
+      const card = document.querySelector(`a[href*="id=${s.id}"]`);
+      if (!card) continue;
+
+      // 更新價格
+      const priceEl = card.querySelector('.watch-card-price-num');
+      const changeEl = card.querySelector('.watch-card-change');
+      if (priceEl) priceEl.textContent = fmt.price(fresh.price.current);
+      if (changeEl) {
+        const cls = changeClass(fresh.price.change);
+        changeEl.className = `watch-card-change ${cls}`;
+        changeEl.textContent = `${fmt.change(fresh.price.change)} · ${fmt.percent(fresh.price.changePercent)}`;
+      }
+
+      // 加上即時標記（如果還沒有）
+      if (!card.querySelector('.live-badge')) {
+        const badge = document.createElement('div');
+        badge.className = 'live-badge';
+        badge.innerHTML = `<span class="live-dot"></span> ${fresh.tradeDate} · FinMind`;
+        card.appendChild(badge);
+      }
+    } catch (err) {
+      console.warn(`Failed to enrich ${s.id}:`, err);
+    }
+  }
 }
 
 function buildWatchCard(meta, data, idx) {
@@ -216,6 +253,114 @@ async function initStock() {
 
   const noteMd = await loadText(`notes/${id}.md`);
   renderStockDetail(data, noteMd, main);
+
+  // 即時抓最新價格覆蓋顯示（async，不阻塞首次渲染）
+  enrichStockDetailPrice(id, data);
+}
+
+async function enrichStockDetailPrice(stockId, baseData) {
+  if (!window.StockRadarFetch) return;
+
+  // 顯示「正在抓取即時資料」訊號
+  const banner = document.createElement('div');
+  banner.className = 'live-banner loading';
+  banner.innerHTML = `<span class="live-dot"></span> 正在抓取即時報價 · FinMind...`;
+
+  const header = document.querySelector('.detail-header');
+  if (header) header.insertBefore(banner, header.firstChild);
+
+  try {
+    const fresh = await window.StockRadarFetch.fetchLatestPrice(stockId);
+
+    if (!fresh.ok) {
+      banner.className = 'live-banner error';
+      banner.innerHTML = `⚠️ 即時資料抓取失敗：${escapeHtml(fresh.error || 'unknown')} · 顯示資料為本地快取（${fmt.datetime(baseData.lastUpdated)}）`;
+      return;
+    }
+
+    // 更新 DOM 中的價格
+    const main = document.querySelector('.price-main');
+    const change = document.querySelector('.price-change');
+    const detail = document.querySelector('.price-detail');
+
+    const cls = changeClass(fresh.price.change);
+    if (main) {
+      main.className = `price-main ${cls}`;
+      main.textContent = fmt.price(fresh.price.current);
+    }
+    if (change) {
+      change.className = `price-change ${cls}`;
+      change.textContent = `${fmt.change(fresh.price.change)} · ${fmt.percent(fresh.price.changePercent)}`;
+    }
+    if (detail) {
+      detail.innerHTML = `
+        <span>開 <strong>${fmt.price(fresh.price.open)}</strong></span>
+        <span>高 <strong>${fmt.price(fresh.price.high)}</strong></span>
+        <span>低 <strong>${fmt.price(fresh.price.low)}</strong></span>
+        <span>量 <strong>${fmt.volume(fresh.price.volume)}</strong></span>
+      `;
+    }
+
+    // 替換 banner 為成功訊號
+    banner.className = 'live-banner success';
+    banner.innerHTML = `
+      <span class="live-dot active"></span>
+      <span class="live-banner-text">
+        即時報價已更新 · 交易日 <strong>${fresh.tradeDate}</strong> ·
+        資料來源：<strong>FinMind</strong> · 抓取時間：<strong>${fresh._meta.fetchedAtDisplay}</strong>
+      </span>
+    `;
+
+    // 同時在頁尾加上完整的資料品質報告
+    appendDataQualityFooter(baseData, fresh);
+
+  } catch (err) {
+    banner.className = 'live-banner error';
+    banner.innerHTML = `⚠️ 即時資料抓取失敗：${escapeHtml(err.message)}`;
+  }
+}
+
+function appendDataQualityFooter(baseData, fresh) {
+  const main = document.getElementById('stock-main');
+  if (!main) return;
+
+  // 移除舊的（如果有）
+  const old = main.querySelector('.data-quality-footer');
+  if (old) old.remove();
+
+  const isMockSoft = baseData.dataQuality === 'mock' || baseData.dataQuality === 'partial';
+
+  const footer = document.createElement('section');
+  footer.className = 'data-quality-footer';
+  footer.innerHTML = `
+    <div class="dq-header">
+      <span class="dq-title">資料品質報告 · DATA QUALITY</span>
+    </div>
+    <div class="dq-grid">
+      <div class="dq-row">
+        <span class="dq-light green"></span>
+        <span class="dq-field">即時報價</span>
+        <span class="dq-detail">FinMind · ${fresh.tradeDate} · 抓取於 ${fresh._meta.fetchedAtDisplay}</span>
+      </div>
+      <div class="dq-row">
+        <span class="dq-light ${isMockSoft ? 'yellow' : 'green'}"></span>
+        <span class="dq-field">產業分析、轉型、客戶、法說</span>
+        <span class="dq-detail">${isMockSoft ? '⚠️ 目前為人工撰寫的範例資料，需用 stock-research SKILL 更新真實洞察' : '由 stock-research SKILL 產出'}</span>
+      </div>
+      <div class="dq-row">
+        <span class="dq-light yellow"></span>
+        <span class="dq-field">月營收、財務數字</span>
+        <span class="dq-detail">本地快取 · 上次更新 ${fmt.datetime(baseData.lastUpdated)} · Phase 3 GitHub Actions 啟用後每日更新</span>
+      </div>
+      <div class="dq-row">
+        <span class="dq-light green"></span>
+        <span class="dq-field">本地基本資料</span>
+        <span class="dq-detail">手動維護於 data/stocks/${baseData.id}.json</span>
+      </div>
+    </div>
+  `;
+
+  main.appendChild(footer);
 }
 
 function renderQuickFallback(id, main) {
