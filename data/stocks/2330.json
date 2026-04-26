@@ -1,0 +1,99 @@
+{
+  "id": "2330",
+  "name": "台積電",
+  "fullName": "台灣積體電路製造股份有限公司",
+  "market": "上市",
+  "industry": "半導體",
+  "subIndustry": "晶圓代工",
+  "lastUpdated": "2026-04-25T07:00:00+08:00",
+  "dataQuality": "mock",
+  "_dataQualityNote": "此為前端開發用 mock 資料。Phase 2 SKILL 完成後會被覆蓋為真實資料。",
+
+  "price": {
+    "current": 1180.00,
+    "change": 14.00,
+    "changePercent": 1.20,
+    "previousClose": 1166.00,
+    "open": 1170.00,
+    "high": 1185.00,
+    "low": 1168.00,
+    "volume": 28543000,
+    "marketCap": 30598000000000
+  },
+
+  "oneLineDef": "全球最大專業積體電路製造服務（晶圓代工）公司，市占率超過 60%，掌握 3 奈米以下先進製程。",
+
+  "executiveSummary": "台積電是全球半導體產業的核心，主要客戶涵蓋蘋果、輝達、超微、高通等所有主要 IC 設計公司。近期重點為 2 奈米製程量產時程、海外擴廠（美國亞利桑那、日本熊本、德國德勒斯登）的成本與獲利影響、以及 AI 加速器需求帶動的 CoWoS 先進封裝產能。轉型動能：從純代工轉向先進封裝整合服務（3DFabric），毛利率長期維持 50%+。",
+
+  "revenueStructure": {
+    "byProduct": [
+      { "name": "高效能運算 (HPC)", "percentage": 51.0 },
+      { "name": "智慧型手機", "percentage": 35.0 },
+      { "name": "物聯網 (IoT)", "percentage": 6.0 },
+      { "name": "車用電子", "percentage": 5.0 },
+      { "name": "消費性電子", "percentage": 2.0 },
+      { "name": "其他", "percentage": 1.0 }
+    ],
+    "byProcess": [
+      { "name": "3 奈米", "percentage": 22.0 },
+      { "name": "5 奈米", "percentage": 32.0 },
+      { "name": "7 奈米", "percentage": 17.0 },
+      { "name": "16/20 奈米", "percentage": 8.0 },
+      { "name": "28 奈米", "percentage": 8.0 },
+      { "name": "其他成熟製程", "percentage": 13.0 }
+    ],
+    "quarterlyTrend": [
+      { "quarter": "2025 Q2", "revenue": 850000 },
+      { "quarter": "2025 Q3", "revenue": 920000 },
+      { "quarter": "2025 Q4", "revenue": 980000 },
+      { "quarter": "2026 Q1", "revenue": 1020000 }
+    ]
+  },
+
+  "majorCustomers": [
+    { "name": "Apple", "estimatedShare": "25%+", "products": "A 系列、M 系列處理器" },
+    { "name": "NVIDIA", "estimatedShare": "10-12%", "products": "AI 加速卡、GPU" },
+    { "name": "AMD", "estimatedShare": "8-10%", "products": "CPU、GPU、AI 加速器" },
+    { "name": "Qualcomm", "estimatedShare": "5-7%", "products": "Snapdragon" },
+    { "name": "Broadcom", "estimatedShare": "5-6%", "products": "網通晶片、ASIC" }
+  ],
+
+  "earningsCallHighlights": [
+    {
+      "date": "2026-04-17",
+      "title": "2026 Q1 法說會",
+      "points": [
+        "本季營收年增 35%，毛利率 53.2%，優於市場預期",
+        "AI 相關營收占比已達 25%，全年資本支出維持 380-420 億美元區間",
+        "2 奈米製程依進度於 2026 年底量產，CoWoS 產能 2026 年底較 2025 年再倍增"
+      ]
+    }
+  ],
+
+  "transformation": {
+    "summary": "從純晶圓代工延伸至『晶圓 + 先進封裝 + 矽光子』三軸整合，並透過海外擴廠分散地緣政治風險。",
+    "keyInitiatives": [
+      "3DFabric 先進封裝平台整合 CoWoS、SoIC、InFO",
+      "矽光子（Silicon Photonics）布局，目標 2027 年量產",
+      "海外擴廠：美國 Fab 21、日本 JASM、德國 ESMC"
+    ]
+  },
+
+  "peerComparison": [
+    { "metric": "毛利率", "self": "53.2%", "peers": [{ "name": "Samsung Foundry", "value": "~30%" }, { "name": "Intel Foundry", "value": "虧損" }] },
+    { "metric": "本益比", "self": "22.5", "peers": [{ "name": "Samsung", "value": "15.2" }, { "name": "Intel", "value": "N/A" }] },
+    { "metric": "營收 YoY", "self": "+35%", "peers": [{ "name": "Samsung", "value": "+12%" }, { "name": "Intel", "value": "-3%" }] }
+  ],
+
+  "recentNews": [
+    { "date": "2026-04-22", "title": "台積電宣布德勒斯登廠 2026 年底開始試產", "summary": "ESMC 由 TSMC、博世、英飛凌、恩智浦合資，主攻車用與工業半導體。" },
+    { "date": "2026-04-20", "title": "傳輝達加碼 CoWoS 產能訂單", "summary": "為因應 Blackwell 架構需求，輝達向台積電額外追加 30% CoWoS 訂單。" },
+    { "date": "2026-04-18", "title": "Q1 法說會 AI 營收占比首次突破 25%", "summary": "管理層上修全年 AI 營收成長預期至 60% 以上。" }
+  ],
+
+  "dataVerification": {
+    "price": { "sources": ["FinMind", "Yahoo Finance"], "status": "green", "diff": 0.0 },
+    "revenue": { "sources": ["FinMind", "MOPS"], "status": "green", "diff": 0.0 },
+    "industry": { "sources": ["TWSE", "Goodinfo"], "status": "green", "note": "兩源均歸類為半導體業" }
+  }
+}

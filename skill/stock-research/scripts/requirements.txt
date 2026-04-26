@@ -1,0 +1,13 @@
+# Stock Research SKILL — Python Dependencies
+#
+# 設計原則：盡可能用標準庫（urllib、json、datetime）以降低部署成本。
+# 唯一需要的外部套件僅在進階使用情境。
+#
+# 預期 Python 版本：3.10+
+
+# 目前所有 fetcher 都使用標準庫，無外部依賴。
+# 若未來加入以下功能可能需要：
+#
+# beautifulsoup4>=4.12  # 解析 MOPS HTML（若改為直接爬而非用 web_fetch）
+# pandas>=2.0           # 大量資料處理
+# tabulate>=0.9         # 整齊輸出

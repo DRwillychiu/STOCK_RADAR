@@ -1,0 +1,104 @@
+{
+  "_schema_version": "0.1",
+  "_description": "Stock Radar 個股資料標準格式。Claude 在 stock-research SKILL 中產出檔案時應完全遵循此 schema。所有欄位都應存在，沒有資料的欄位填 null 並在對應 _note 欄位說明原因。",
+
+  "id": "STRING - 股票代號，例：2330",
+  "name": "STRING - 公司簡稱",
+  "fullName": "STRING - 公司全名",
+  "market": "ENUM - 上市 | 上櫃 | 興櫃",
+  "industry": "STRING - 主產業，例：半導體",
+  "subIndustry": "STRING - 子產業，例：晶圓代工",
+  "lastUpdated": "ISO8601 - 資料最後更新時間",
+  "dataQuality": "ENUM - verified | partial | mock",
+  "_dataQualityNote": "STRING (optional) - 解釋資料品質",
+
+  "price": {
+    "current": "NUMBER - 現價",
+    "change": "NUMBER - 漲跌（金額）",
+    "changePercent": "NUMBER - 漲跌幅（%）",
+    "previousClose": "NUMBER - 昨收",
+    "open": "NUMBER - 開盤",
+    "high": "NUMBER - 最高",
+    "low": "NUMBER - 最低",
+    "volume": "NUMBER - 成交量（股）",
+    "marketCap": "NUMBER - 市值（元）"
+  },
+
+  "oneLineDef": "STRING ≤50字 - 一句話定位",
+  "executiveSummary": "STRING 80-150字 - 30秒摘要",
+
+  "revenueStructure": {
+    "byProduct": [
+      { "name": "STRING", "percentage": "NUMBER 0-100" }
+    ],
+    "byApplication": [
+      { "name": "STRING", "percentage": "NUMBER 0-100" }
+    ],
+    "_byApplicationOptional": "若無資料可省略此欄位",
+    "quarterlyTrend": [
+      { "quarter": "STRING 例：2026 Q1", "revenue": "NUMBER 單位百萬元" }
+    ]
+  },
+
+  "majorCustomers": [
+    {
+      "name": "STRING - 客戶名",
+      "estimatedShare": "STRING - 例：10-12% 或「待確認」",
+      "products": "STRING - 客戶向本公司採購的產品/服務"
+    }
+  ],
+  "_majorCustomersNote": "STRING (optional) - 若資料較不透明可說明",
+
+  "earningsCallHighlights": [
+    {
+      "date": "STRING YYYY-MM-DD",
+      "title": "STRING - 例：2026 Q1 法說會",
+      "points": ["STRING", "STRING", "STRING"]
+    }
+  ],
+
+  "transformation": {
+    "summary": "STRING - 一段話描述轉型方向",
+    "keyInitiatives": ["STRING - 具體舉措"]
+  },
+
+  "peerComparison": [
+    {
+      "metric": "STRING - 指標名（毛利率、本益比、營收YoY等）",
+      "self": "STRING - 本公司值",
+      "peers": [{ "name": "STRING", "value": "STRING" }],
+      "_warning": "STRING (optional) - 該指標若有特別需要警示"
+    }
+  ],
+
+  "recentNews": [
+    {
+      "date": "STRING YYYY-MM-DD",
+      "title": "STRING - 新聞標題",
+      "summary": "STRING - 一句話重點"
+    }
+  ],
+
+  "warnings": [
+    "STRING - 風險警示，每條獨立，建議以 emoji 開頭如 ⚠️"
+  ],
+
+  "dataVerification": {
+    "price": {
+      "sources": ["STRING - 來源名"],
+      "status": "ENUM - green | yellow | red",
+      "diff": "NUMBER (optional) - 兩源差異百分比",
+      "note": "STRING (optional) - 說明"
+    },
+    "revenue": {
+      "sources": ["STRING"],
+      "status": "ENUM",
+      "note": "STRING (optional)"
+    },
+    "industry": {
+      "sources": ["STRING"],
+      "status": "ENUM",
+      "note": "STRING (optional)"
+    }
+  }
+}

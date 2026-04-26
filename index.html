@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Radar · 個人台股研究系統</title>
+  <meta name="description" content="個人化台股研究儀表板。三層架構：Claude SKILL 研究、GitHub Actions 排程、靜態網頁展示。">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23c9a961'/%3E%3C/svg%3E">
+</head>
+<body data-page="home">
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="./" class="brand" style="text-decoration: none;">
+        <span class="brand-mark"></span>
+        <span>Stock Radar</span>
+        <span class="brand-tag">v0.1 / mvp</span>
+      </a>
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input id="search-input" class="search-input" type="text" placeholder="股號或公司名稱（例：2330、台積電）" autocomplete="off">
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <a href="about.html" style="font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--text-tertiary);">ABOUT</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-eyebrow">— 平日先規劃，突發要應對</div>
+      <h1 class="hero-title">
+        Five-minute<br>
+        <em>conviction</em> on any<br>
+        Taiwan ticker.
+      </h1>
+      <p class="hero-sub">
+        當老闆隨口問起一檔股票，無論上市、上櫃、興櫃，這裡是你的私人研究桌。
+        產業定位、營收結構、轉型動向、近期動態，多源驗證後一頁讀完。
+      </p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-label">Watchlist</div>
+          <div class="hero-stat-value mono"><span id="stat-watchlist-count">—</span> 檔</div>
+        </div>
+        <div>
+          <div class="hero-stat-label">Last Updated</div>
+          <div class="hero-stat-value mono" id="stat-last-updated">—</div>
+        </div>
+        <div>
+          <div class="hero-stat-label">Sources</div>
+          <div class="hero-stat-value mono">3+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="section-title-num">/01</span>
+          <span class="section-title-text">追蹤清單</span>
+        </div>
+        <span class="section-meta">WATCHLIST · DAILY UPDATED</span>
+      </div>
+      <div id="watchlist-grid" class="watch-grid">
+        <div class="loading">Loading watchlist…</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>STOCK RADAR · 個人研究系統 · 資料僅供參考，不構成投資建議</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

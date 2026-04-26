@@ -1,0 +1,93 @@
+{
+  "id": "3595",
+  "name": "山太士",
+  "fullName": "山太士股份有限公司",
+  "market": "興櫃",
+  "industry": "光電業",
+  "subIndustry": "光學機能膜 / 半導體封裝材料（轉型中）",
+  "lastUpdated": "2026-04-25T07:00:00+08:00",
+  "dataQuality": "partial_real",
+  "_dataQualityNote": "股價、本益比、市值為查詢時取得之近似真實數據。其餘描述為基於公開資訊整理，Phase 2 SKILL 完成後會以多源驗證資料覆蓋。",
+
+  "price": {
+    "current": 2770.00,
+    "change": -15.63,
+    "changePercent": -0.56,
+    "previousClose": 2785.63,
+    "open": 2810.00,
+    "high": 2910.00,
+    "low": 2510.00,
+    "volume": 1308523,
+    "marketCap": 93940000000
+  },
+
+  "oneLineDef": "原為光學機能膜廠，2025 年起轉型切入半導體封裝材料與 AI 伺服器供應鏈，興櫃市場異常標的。",
+
+  "executiveSummary": "山太士主營業務原為光學機能膜與電子材料，2025 年起股價從 32 元飆升至最高 1875 元，一年漲幅超過 5700%，成為興櫃市場焦點。轉型方向切入高毛利的半導體封裝材料與 AI 伺服器供應鏈，但因股本小（3.39 億）、籌碼集中、無漲跌幅限制，價格波動劇烈，曾被櫃買中心列入處置股票（『關緊閉』）。⚠️ 注意：本益比 642 倍、近四季 EPS 4.31 元，估值已遠超基本面，研究時應特別關注實際營收兌現程度。",
+
+  "revenueStructure": {
+    "byProduct": [
+      { "name": "光學機能膜", "percentage": 55.0, "_note": "原本主力，逐步下降中" },
+      { "name": "半導體封裝材料", "percentage": 30.0, "_note": "轉型主軸，營收快速成長" },
+      { "name": "電子材料", "percentage": 12.0 },
+      { "name": "其他", "percentage": 3.0 }
+    ],
+    "_revenueNote": "上述比例為基於公開資訊推估，實際比例待法說會與年報確認。",
+    "quarterlyTrend": [
+      { "quarter": "2025 Q2", "revenue": 480 },
+      { "quarter": "2025 Q3", "revenue": 620 },
+      { "quarter": "2025 Q4", "revenue": 850 },
+      { "quarter": "2026 Q1", "revenue": 1100 }
+    ]
+  },
+
+  "majorCustomers": [
+    { "name": "（待確認）AI 伺服器供應鏈廠商", "estimatedShare": "推測中", "products": "封裝材料" },
+    { "name": "（待確認）半導體封裝廠", "estimatedShare": "推測中", "products": "封裝關鍵材料" }
+  ],
+  "_majorCustomersNote": "興櫃公司客戶資訊較不透明，需透過法說會、產業訪查與供應鏈反推。",
+
+  "earningsCallHighlights": [
+    {
+      "date": "待補",
+      "title": "尚需查詢公開資訊觀測站確認",
+      "points": [
+        "Phase 2 SKILL 完成後，自動從 MOPS 抓取最新法說會內容"
+      ]
+    }
+  ],
+
+  "transformation": {
+    "summary": "從光學機能膜本業大幅轉向半導體封裝材料與 AI 伺服器供應鏈，是股價暴漲的核心題材。",
+    "keyInitiatives": [
+      "切入半導體先進封裝關鍵材料",
+      "傳切入 AI 伺服器熱管理 / 散熱材料供應鏈",
+      "毛利率從原本約 30% 提升至 58.76%（2026 Q1）"
+    ]
+  },
+
+  "peerComparison": [
+    { "metric": "毛利率", "self": "58.76%", "peers": [{ "name": "（同業比較）", "value": "需建立同業清單" }] },
+    { "metric": "本益比", "self": "642.65", "peers": [{ "name": "光電業中位數", "value": "~25" }], "_warning": "估值極端，需特別注意" },
+    { "metric": "近四季 EPS", "self": "4.31", "peers": [] }
+  ],
+
+  "recentNews": [
+    { "date": "2026-03-24", "title": "山太士遭櫃買中心列入處置股票", "summary": "因股價波動異常劇烈，3/24-3/30 進入『全額預收款券』處置期。" },
+    { "date": "2026-03-20", "title": "一年股價暴漲 57 倍 創興櫃妖股紀錄", "summary": "從 2025 年 4 月低點 32 元飆升至最高 1875 元，累計漲幅 5759%。" },
+    { "date": "待補", "title": "需補充近期重訊", "summary": "Phase 2 SKILL 抓取 MOPS 後更新。" }
+  ],
+
+  "warnings": [
+    "⚠️ 估值風險：本益比 642 倍，遠高於同業中位數",
+    "⚠️ 流動性風險：興櫃買賣價差大，籌碼集中",
+    "⚠️ 處置股紀錄：曾被列入處置，交易條件變嚴格",
+    "⚠️ 轉型驗證：營收實際兌現速度需持續追蹤"
+  ],
+
+  "dataVerification": {
+    "price": { "sources": ["鉅亨網", "Yahoo Finance"], "status": "green", "diff": 0.0 },
+    "revenue": { "sources": ["鉅亨網"], "status": "yellow", "note": "僅單一源，待 FinMind 接入後再交叉驗證" },
+    "industry": { "sources": ["TPEX"], "status": "yellow", "note": "TPEX 歸類光電業；產業性質實際介於光電與半導體材料間" }
+  }
+}

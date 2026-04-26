@@ -1,0 +1,96 @@
+{
+  "id": "3711",
+  "name": "日月光投控",
+  "fullName": "日月光投資控股股份有限公司",
+  "market": "上市",
+  "industry": "半導體",
+  "subIndustry": "封裝測試",
+  "lastUpdated": "2026-04-25T07:00:00+08:00",
+  "dataQuality": "mock",
+  "_dataQualityNote": "此為前端開發用 mock 資料。Phase 2 SKILL 完成後會被覆蓋為真實資料。",
+
+  "price": {
+    "current": 165.50,
+    "change": -0.83,
+    "changePercent": -0.50,
+    "previousClose": 166.33,
+    "open": 166.00,
+    "high": 167.00,
+    "low": 165.00,
+    "volume": 18430000,
+    "marketCap": 720000000000
+  },
+
+  "oneLineDef": "全球最大專業半導體封裝測試（OSAT）廠，市占率超過 30%，旗下整合日月光半導體與矽品兩大封測廠。",
+
+  "executiveSummary": "ASE Technology Holding 是封測產業龍頭，主要承接台積電代工後的封裝測試業務。近期重點為 AI 加速器帶動的先進封裝（FoCoS-Bridge、VIPack）營收快速成長、車用電子封裝需求回溫、以及與台積電在 CoWoS 產能上的協作分工。轉型動能：從傳統打線封裝大幅向先進封裝（2.5D、3D）轉型，並透過環旭電子（USI）布局系統級封裝（SiP）。",
+
+  "revenueStructure": {
+    "byProduct": [
+      { "name": "封裝服務 (ATM)", "percentage": 55.0 },
+      { "name": "EMS（環旭）", "percentage": 38.0 },
+      { "name": "測試服務", "percentage": 6.0 },
+      { "name": "其他", "percentage": 1.0 }
+    ],
+    "byApplication": [
+      { "name": "通訊", "percentage": 42.0 },
+      { "name": "運算", "percentage": 28.0 },
+      { "name": "車用 / 工業", "percentage": 16.0 },
+      { "name": "消費性", "percentage": 14.0 }
+    ],
+    "quarterlyTrend": [
+      { "quarter": "2025 Q2", "revenue": 145000 },
+      { "quarter": "2025 Q3", "revenue": 158000 },
+      { "quarter": "2025 Q4", "revenue": 162000 },
+      { "quarter": "2026 Q1", "revenue": 156000 }
+    ]
+  },
+
+  "majorCustomers": [
+    { "name": "Qualcomm", "estimatedShare": "10-12%", "products": "通訊晶片封測" },
+    { "name": "Broadcom", "estimatedShare": "8-10%", "products": "網通、無線晶片封測" },
+    { "name": "MediaTek", "estimatedShare": "7-9%", "products": "SoC 封測" },
+    { "name": "NVIDIA", "estimatedShare": "5-7%", "products": "AI 加速卡先進封裝" },
+    { "name": "Apple（透過 USI）", "estimatedShare": "10%+", "products": "Apple Watch、AirPods SiP 模組" }
+  ],
+
+  "earningsCallHighlights": [
+    {
+      "date": "2026-04-15",
+      "title": "2026 Q1 法說會",
+      "points": [
+        "ATM 業務年增 22%，優於整體封測產業 12% 的成長率",
+        "先進封裝營收占 ATM 比重已達 18%，預期年底突破 25%",
+        "車用電子庫存去化結束，Q2 預期車用封裝訂單回溫"
+      ]
+    }
+  ],
+
+  "transformation": {
+    "summary": "從傳統打線封裝（Wire Bond）大舉投資先進封裝（FoCoS、VIPack、混合鍵合），並透過 USI 切入 SiP 系統級封裝。",
+    "keyInitiatives": [
+      "VIPack 先進封裝平台，對標台積電 CoWoS",
+      "FoCoS-Bridge 用於 HPC、AI 應用",
+      "與台積電合作分工：CoWoS 產能緊張時，部分 OS（Out-Sourced）由日月光承接",
+      "USI 切入 AI 伺服器 OAM 模組組裝"
+    ]
+  },
+
+  "peerComparison": [
+    { "metric": "毛利率", "self": "16.8%", "peers": [{ "name": "Amkor", "value": "13.5%" }, { "name": "JCET", "value": "11.2%" }] },
+    { "metric": "本益比", "self": "16.5", "peers": [{ "name": "Amkor", "value": "18.0" }, { "name": "JCET", "value": "22.5" }] },
+    { "metric": "營收 YoY", "self": "+18%", "peers": [{ "name": "Amkor", "value": "+8%" }, { "name": "JCET", "value": "+14%" }] }
+  ],
+
+  "recentNews": [
+    { "date": "2026-04-23", "title": "日月光 VIPack 拿下 AI 客戶試產訂單", "summary": "傳國際 IC 設計大廠選用日月光 VIPack 平台進行 AI 加速器先進封裝。" },
+    { "date": "2026-04-19", "title": "USI 第一季營收創同期新高", "summary": "Apple Watch Ultra 3 拉貨動能延續，USI 智慧穿戴模組需求強勁。" },
+    { "date": "2026-04-15", "title": "Q1 ATM 毛利率回升至 16.8%", "summary": "稼動率提升 + 產品組合優化，毛利率較去年同期擴張 1.5 個百分點。" }
+  ],
+
+  "dataVerification": {
+    "price": { "sources": ["FinMind", "Yahoo Finance"], "status": "green", "diff": 0.0 },
+    "revenue": { "sources": ["FinMind", "MOPS"], "status": "green", "diff": 0.0 },
+    "industry": { "sources": ["TWSE", "Goodinfo"], "status": "green", "note": "兩源均歸類為半導體封測業" }
+  }
+}

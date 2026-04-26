@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Stock Radar</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23c9a961'/%3E%3C/svg%3E">
+</head>
+<body data-page="about">
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="./" class="brand" style="text-decoration: none;">
+        <span class="brand-mark"></span>
+        <span>Stock Radar</span>
+        <span class="brand-tag">v0.1 / mvp</span>
+      </a>
+      <a href="./" style="font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--text-tertiary);">← HOME</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-eyebrow">— 系統說明</div>
+      <h1 class="hero-title">About <em>Stock Radar</em></h1>
+      <p class="hero-sub">
+        個人化台股研究儀表板。設計目的：當老闆隨口問起一檔股票時，能在 5 分鐘內掌握公司產業定位、營收結構、轉型動向、近期動態，並提出有見地的觀察。
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="section-title-num">01</span>
+          <span class="section-title-text">三層架構</span>
+        </div>
+      </div>
+      <div class="data-list">
+        <div class="data-row">
+          <span class="data-row-label">研究層 · Claude SKILL</span>
+          <span class="data-row-value">stock-research</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">資料層 · GitHub Actions + JSON</span>
+          <span class="data-row-value">每日 07:00 自動更新</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">展示層 · GitHub Pages</span>
+          <span class="data-row-value">純靜態 HTML / CSS / JS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="section-title-num">02</span>
+          <span class="section-title-text">資料來源</span>
+        </div>
+      </div>
+      <div class="data-list">
+        <div class="data-row">
+          <span class="data-row-label">FinMind</span>
+          <span class="data-row-value">主源 · 財報、月營收、股價</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Yahoo Finance</span>
+          <span class="data-row-value">副源 · 即時報價、市值</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">公開資訊觀測站 MOPS</span>
+          <span class="data-row-value">重訊、法說會</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Goodinfo</span>
+          <span class="data-row-value">同業比較、產業歸類</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="section-title-num">03</span>
+          <span class="section-title-text">使用流程</span>
+        </div>
+      </div>
+      <ol class="earnings-points" style="counter-reset: point;">
+        <li>老闆問股票 → 在搜尋框輸入股號或公司名</li>
+        <li>Watchlist 內的股票 → 立即顯示完整詳情頁</li>
+        <li>Watchlist 外的股票 → 顯示提示，請 Claude 跑 SKILL 深入研究</li>
+        <li>研究結果 commit 到 repo → 隔天自動納入排程</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="section-title-num">04</span>
+          <span class="section-title-text">資料一致性燈號</span>
+        </div>
+      </div>
+      <div class="verify-list">
+        <div class="verify-row">
+          <span class="light green"></span>
+          <span class="verify-field">綠燈</span>
+          <span class="verify-detail">兩個以上資料源完全一致</span>
+        </div>
+        <div class="verify-row">
+          <span class="light yellow"></span>
+          <span class="verify-field">黃燈</span>
+          <span class="verify-detail">資料源有小差異或單源資料</span>
+        </div>
+        <div class="verify-row">
+          <span class="light red"></span>
+          <span class="verify-field">紅燈</span>
+          <span class="verify-detail">資料源有明顯差異，需人工確認</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="warning-box">
+        <div class="warning-box-title">DISCLAIMER · 免責聲明</div>
+        <ul class="warning-list">
+          <li>本系統為個人研究工具，所有資料僅供參考</li>
+          <li>不構成任何投資建議、買賣訊號或財務顧問意見</li>
+          <li>資料準確性以官方公告（TWSE、TPEX、MOPS）為準</li>
+          <li>使用者應自行判斷投資價值與風險，獨立做出投資決策</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>STOCK RADAR · 個人研究系統</p>
+    </div>
+  </footer>
+
+</body>
+</html>

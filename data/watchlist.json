@@ -1,0 +1,32 @@
+{
+  "lastUpdated": "2026-04-25T07:00:00+08:00",
+  "stocks": [
+    {
+      "id": "2330",
+      "name": "台積電",
+      "market": "上市",
+      "industry": "半導體",
+      "addedDate": "2026-04-25",
+      "tags": ["核心持股", "AI 概念"],
+      "priority": 1
+    },
+    {
+      "id": "3711",
+      "name": "日月光投控",
+      "market": "上市",
+      "industry": "半導體封測",
+      "addedDate": "2026-04-25",
+      "tags": ["先進封裝", "AI 概念"],
+      "priority": 2
+    },
+    {
+      "id": "3595",
+      "name": "山太士",
+      "market": "興櫃",
+      "industry": "光電 / 半導體材料",
+      "addedDate": "2026-04-25",
+      "tags": ["轉型題材", "妖股", "高風險"],
+      "priority": 3
+    }
+  ]
+}
